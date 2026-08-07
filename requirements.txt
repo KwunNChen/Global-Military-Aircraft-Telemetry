@@ -1,0 +1,6 @@
+polars
+pydantic
+duckdb
+prefect
+requests
+python-dotenv

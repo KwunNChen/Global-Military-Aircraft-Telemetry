@@ -1,0 +1,16 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# secrets
+.env
+
+# data + local db (regenerable, don't belong in git history)
+data/raw/
+data/processed/
+*.duckdb
+
+# editor/OS
+.vscode/
+.DS_Store
