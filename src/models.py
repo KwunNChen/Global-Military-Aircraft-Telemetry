@@ -1,4 +1,5 @@
 import pydantic
+from typing import Literal
 from pydantic import ConfigDict, model_validator, Field
 
 class AircraftModel(pydantic.BaseModel):
