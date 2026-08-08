@@ -2,18 +2,18 @@
 
 ## Phase 1 — Project Setup
 - [x] Virtual environment created (`.venv`)
-- [ ] Libraries installed *into* the venv (not global)
-- [ ] Directory structure created (`/src`, `/data/raw`, `/data/processed`)
+- [x] Libraries installed *into* the venv (not global)
+- [x] Directory structure created (`/src`, `/data/raw`, `/data/processed`)
 - [x] README skeleton
-- [ ] GitHub repository created (local only — never pushed without explicit go-ahead)
+- [x] GitHub repository created (local only — never pushed without explicit go-ahead)
 - [x] Architecture description added to README
 
 ## Phase 2 — Data Ingestion
-- [ ] `src/ingest.py` written
-- [ ] Queries ADS-B Exchange `/v2/mil` endpoint
-- [ ] Saves raw JSON to `/data/raw/raw_aircraft_<timestamp>.json`
-- [ ] Logs ingestion timestamps
-- [ ] Error handling + retries implemented
+- [x] `src/ingest.py` written
+- [x] Queries airplanes.live `/v2/mil` endpoint (free, no key, 1 req/sec limit) — note: no trailing slash, that returns 400
+- [x] Saves raw JSON to `/data/raw/raw_aircraft_<timestamp>.json`
+- [x] Logs ingestion timestamps
+- [x] Error handling + retries implemented (verified against a real timeout + real bad-status failure)
 
 ## Phase 3 — Data Validation (Pydantic)
 - [ ] `AircraftModel` defined
@@ -65,4 +65,6 @@
 
 ---
 
-**Data scope decision:** Global military-tagged aircraft via ADS-B Exchange `/v2/mil`, not US-only. `region` field in the schema allows slicing to CONUS vs. overseas later without re-ingesting.
+**Data scope decision:** Global military-tagged aircraft via airplanes.live `/v2/mil` (free, ADS-B Exchange-lineage data, same response format), not US-only. `region` field in the schema allows slicing to CONUS vs. overseas later without re-ingesting.
+
+**Data source decision:** Switched from ADS-B Exchange's paid RapidAPI tier ($10/mo) to airplanes.live, a free community-run API with matching schema and a dedicated military endpoint.

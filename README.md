@@ -2,18 +2,20 @@
 
 A reproducible data engineering pipeline that ingests open-source military aircraft telemetry, validates it, transforms it, stores it in an analytical database, and produces ML-ready datasets for defense activity analysis.
 
-> Status: **Phase 1 — Project Setup** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
+> Status: **Phase 3 — Data Validation** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
 
 ## Overview
 
-This project pulls real-time global military aircraft telemetry from the [ADS-B Exchange](https://www.adsbexchange.com/) API, enforces a strict data schema, engineers activity features (climb rate, acceleration, heading change), and lands the result in a queryable OLAP warehouse — with the whole pipeline orchestrated and automatable end to end.
+This project pulls real-time global military aircraft telemetry from the [airplanes.live](https://airplanes.live/) API (a free, community-run feed carrying the same ADS-B Exchange-lineage data format), enforces a strict data schema, engineers activity features (climb rate, acceleration, heading change), and lands the result in a queryable OLAP warehouse — with the whole pipeline orchestrated and automatable end to end.
 
 It's built to demonstrate the core skill set of a data engineer working on defense/telemetry analytics: ingestion, schema validation, transformation, dimensional modeling, storage, and orchestration — with an ML-ready output layer as the payoff.
+
+If you're auditing this code, please beware that I comment a lot because I'm one of those people that look at my own code after a week and go, "How the heck does this work?"
 
 ## Architecture
 
 ```
-ADS-B Exchange API
+airplanes.live API
         │
         ▼
   [1] Ingestion         raw JSON  →  /data/raw
@@ -45,13 +47,15 @@ ADS-B Exchange API
 | Transformation | Polars |
 | Storage | DuckDB |
 | Orchestration | Prefect |
-| Data source | ADS-B Exchange API (global military feed) |
+| Data source | airplanes.live API (free, global military feed) |
 
 **Planned enhancements:** GeoPandas (geospatial validation), DVC (data versioning), MLflow (experiment tracking).
 
 ## Data Scope
 
-Global military-tagged aircraft, pulled from ADS-B Exchange's `/v2/mil` endpoint — not limited to US assets. ADS-B Exchange is an unfiltered, independent receiver network, so this captures military traffic worldwide as it's broadcast. See `ROADMAP.md` for how region-scoping (e.g. CONUS vs. overseas) fits into the schema.
+Global military-tagged aircraft, pulled from airplanes.live's `/v2/mil` endpoint — not limited to US assets. airplanes.live carries the same unfiltered, independent-receiver-network data as ADS-B Exchange, so this captures military traffic worldwide as it's broadcast. See `ROADMAP.md` for how region-scoping (e.g. CONUS vs. overseas) fits into the schema.
+
+Note: this is a free, volunteer-run community API, not a paid contract. It's a known tradeoff worth stating plainly — uptime and terms aren't guaranteed the way a commercial API's would be.
 
 ## Project Structure
 
@@ -81,7 +85,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Requires an ADS-B Exchange API key (set via `.env`, gitignored — never commit this).
+No API key required (airplanes.live is open access). The `.env` file is still gitignored and reserved for future keys if additional data sources are added.
 
 ## Example Queries
 
@@ -96,4 +100,4 @@ Full 9-phase build plan with status tracking lives in [ROADMAP.md](ROADMAP.md).
 - GeoPandas for geospatial validation and region-boundary analysis
 - DVC for raw data versioning
 - MLflow for tracking anomaly-detection model experiments built on top of the ML feature output
-- Additional open telemetry sources beyond ADS-B Exchange
+- Additional open telemetry sources beyond airplanes.live

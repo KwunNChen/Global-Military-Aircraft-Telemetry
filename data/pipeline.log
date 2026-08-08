@@ -1,0 +1,3 @@
+2026-08-08 00:16:38,793 - INFO - Starting request to airplanes.live
+2026-08-08 00:16:41,713 - INFO - Request successful. Status code: 200: OK. Aircraft count: 78. File saved to data\raw\raw_aircraft_20260808T041638Z.json.
+2026-08-08 00:16:41,715 - INFO - Data ingestion completed successfully.
