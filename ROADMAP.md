@@ -16,14 +16,15 @@
 - [x] Error handling + retries implemented (verified against a real timeout + real bad-status failure)
 
 ## Phase 3 — Data Validation (Pydantic)
-- [ ] `AircraftModel` defined
-- [ ] `PositionModel` defined
-- [ ] `TelemetryRecord` defined
-- [ ] Lat/lon range validation
-- [ ] Altitude/speed numeric validation
-- [ ] ICAO hex format validation (6 chars)
-- [ ] Timestamp parsing
-- [ ] Output: `validated_aircraft_<timestamp>.parquet`
+- [x] `AircraftModel` defined
+- [x] `PositionModel` defined
+- [x] `TelemetryRecord` defined
+- [x] Lat/lon range validation
+- [x] Altitude/speed numeric validation
+- [x] ICAO hex format validation (6 chars)
+- [x] Timestamp parsing
+    -- fair doubt, but this source never gives you a timestamp string to parse in the first place, just a snapshot epoch (`now`) and a per-aircraft offset (`seen`). Computing + range/future-checking it is the correct equivalent here, that counts.
+- [x] Output: `validated_aircraft_<timestamp>.parquet`
 
 ## Phase 4 — Transformation (Polars)
 - [ ] Timestamp normalization

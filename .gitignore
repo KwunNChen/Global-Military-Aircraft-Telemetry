@@ -6,7 +6,7 @@ __pycache__/
 # secrets
 .env
 
-# data + local db (regenerable, don't belong in git history)
+# data + local db
 data/raw/
 data/processed/
 *.duckdb

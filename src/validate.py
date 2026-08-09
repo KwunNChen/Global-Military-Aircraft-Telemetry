@@ -1,24 +1,58 @@
 from pathlib import Path
+from models import AircraftModel, PositionModel
+from pydantic import BaseModel, ValidationError
+from datetime import datetime, timezone
+import polars as pl
+import os
+import logging
 import json
 
-def load_file(filepath):
+logging.basicConfig(level=logging.INFO, filename ="data/pipeline.log",filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
+
+def get_latest_file(directory="data/raw"):
+    files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+    if not files:
+        return None
+
+    latest_file = None
+    latest_time = None
+
+    for file in files:
+        if "aircraft_" in file:
+            path = Path(file)
+            file_stem = path.stem
+            parts = file_stem.split("_")
+            timestamp_str = parts[2].replace("Z", "").strip()
+        else:
+            continue
+        try:
+            timestamp = datetime.strptime(timestamp_str, "%Y%m%dT%H%M%S")
+        except ValueError:
+            continue
+        if latest_time is None or timestamp > latest_time:
+            latest_time = timestamp
+            latest_file = os.path.join(directory, file)
+    return latest_file
+
+def load_file():
     try:
+        filepath = get_latest_file()
         path = Path(filepath)
         if not path.exists():
             raise FileNotFoundError(f"File not found: {filepath}")
         content = path.read_text(encoding="utf-8")
         return content
     except (FileNotFoundError, IsADirectoryError) as e:
-        print(f"Error: {e}")
+        logging.error(f"Error: {e}")
     except UnicodeDecodeError:
-        print("Error: Could not decode file. Check encoding.")
+        logging.error("Error: Could not decode file. Check encoding.")
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        logging.error(f"Unexpected error: {e}")
 
 def build_models(loadeddata):
     #Metadata
     loadeddata = json.loads(loadeddata)
-    totalAC = len(loadeddata['ac'])
+    totalacft = len(loadeddata['ac'])
     now = loadeddata['now']
 
     telemetry_record = []
@@ -32,21 +66,23 @@ def build_models(loadeddata):
         desc = aircraft['desc'] if 'desc' in aircraft else None
         owner = aircraft['ownOp'] if 'ownOp' in aircraft else None
         category = aircraft['category'] if 'category' in aircraft else None
-        timestamp =  now - aircraft['seen']
+        timestamp =  now - (aircraft['seen'] * 1000)
         one_acft_model = {"acft_ID": acft_ID,"callsign": callsign,"registration": registration,"type_code": type_code,"desc": desc,"owner": owner,"category": category}
 
         #PositionModel
-        coordinates = (aircraft['lat'], aircraft['lon']) if 'lat' in aircraft and 'lon' in aircraft else (None, None)
-        rounded_fallback = (aircraft['rr_lat'], aircraft['rr_lon']) if 'rr_lat' in aircraft and 'rr_lon' in aircraft else (None, None)
-        last_known_loc = (aircraft['lastPosition']['lat'], aircraft['lastPosition']['lon']) if 'lastPosition' in aircraft and 'lat' in aircraft['lastPosition'] and 'lon' in aircraft['lastPosition'] else (None, None)
-        baro_alt = aircraft['alt_baro'] if 'alt_baro' in aircraft else None
+        lat = aircraft['lat'] if 'lat' in aircraft else None
+        lon = aircraft['lon'] if 'lon' in aircraft else None
+        rr_lat = aircraft['rr_lat'] if 'rr_lat' in aircraft else None
+        rr_lon = aircraft['rr_lon'] if 'rr_lon' in aircraft else None
+        last_position = aircraft['lastPosition'] if 'lastPosition' in aircraft else None
+        alt_baro = aircraft['alt_baro'] if 'alt_baro' in aircraft else None
         geom_alt = aircraft['alt_geom'] if 'alt_geom' in aircraft else None
         heading = aircraft['track'] if 'track' in aircraft else None
-        one_pos_model = {"coordinates": coordinates, "rounded_fallback": rounded_fallback, "last_known_loc": last_known_loc, "baro_alt": baro_alt, "geom_alt": geom_alt, "heading": heading}
+        one_pos_model = {"lat": lat, "lon": lon, "rr_lat": rr_lat, "rr_lon": rr_lon, "lastPosition": last_position, "alt_baro": alt_baro, "geom_alt": geom_alt, "heading": heading}
 
         #TelemetryRecord
         one_telemetry_record = {
-            **one_acft_model, #btw ** unpacks dictionaries into the new dictionary
+            **one_acft_model, #** unpacks dictionaries into the new dictionary
             **one_pos_model,
             "timestamp": timestamp,
             "gs": aircraft['gs'] if 'gs' in aircraft else None,
@@ -61,18 +97,23 @@ def build_models(loadeddata):
 
 def validate_models(telemetry_record):
     valid_records = []
-   #Empty space here that I'm going to work in models.py validation code, once the code validation completes I will be able to sub in the code
-
     for record in telemetry_record:
         if record['acft_ID'] is None:
             continue
-        else:
+        try:
+            PositionModel(**record)
+            AircraftModel(**record)
             valid_records.append(record)
+        except ValidationError as e:
+            logging.warning(f"Validation failed for record {record.get('acft_ID')}: {e}")
     return valid_records
 
 if __name__ == "__main__":
-    file_content = load_file("the file path to file here")
-    if file_content is not None:
-        print("File loaded successfully:")
-        saved_telemetry = build_models(file_content)
-        #Pretend Im saving the validated data into processed or something
+    file = load_file()
+    if file is not None:
+        logging.info("Validation: File loaded successfully")
+        saved_telemetry = build_models(file)
+        validated_data = validate_models(saved_telemetry)
+        df = pl.DataFrame(validated_data)
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        df.write_parquet(f"data/processed/validated_aircraft_{timestamp}.parquet")
