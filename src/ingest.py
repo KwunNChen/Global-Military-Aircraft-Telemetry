@@ -11,10 +11,10 @@ def fetch_data():
         try:
             filepath = Path(f"data/raw/raw_aircraft_{timestamp}.json")
             logging.basicConfig(level=logging.INFO, filename ="data/pipeline.log",filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
-            logging.info("Starting request to airplanes.live")
+            logging.info("Starting request to adsb.fi")
             response = None
             headers = {"User-Agent": "MilitaryAircraftPipeline/1.0"}
-            response = requests.get("https://api.airplanes.live/v2/mil", headers=headers, timeout=10)
+            response = requests.get("https://opendata.adsb.fi/api/v2/mil", headers=headers, timeout=10)
             response.raise_for_status() #Except triggers 
             # Below = response works
             data = response.json()

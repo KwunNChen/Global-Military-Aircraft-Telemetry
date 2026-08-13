@@ -101,9 +101,9 @@ def validate_models(telemetry_record):
         if record['acft_ID'] is None:
             continue
         try:
-            PositionModel(**record)
+            pos = PositionModel(**record)
             AircraftModel(**record)
-            valid_records.append(record)
+            valid_records.append(pos.model_dump())
         except ValidationError as e:
             logging.warning(f"Validation failed for record {record.get('acft_ID')}: {e}")
     return valid_records

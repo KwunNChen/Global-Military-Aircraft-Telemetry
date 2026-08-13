@@ -29,3 +29,469 @@
 2026-08-09 09:35:27,189 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
   Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:12:50,174 - INFO - Starting request to airplanes.live
+2026-08-12 18:12:50,668 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 1 seconds...
+2026-08-12 18:12:50,668 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:12:51,669 - INFO - Starting request to airplanes.live
+2026-08-12 18:12:51,969 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 2 seconds...
+2026-08-12 18:12:51,969 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:12:53,969 - INFO - Starting request to airplanes.live
+2026-08-12 18:12:54,488 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 4 seconds...
+2026-08-12 18:12:54,488 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:12:58,491 - CRITICAL - Data ingestion failed after multiple attempts.
+2026-08-12 18:13:12,818 - INFO - Validation: File loaded successfully
+2026-08-12 18:13:12,823 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,823 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,823 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,823 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,824 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,824 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,824 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,824 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:13:12,824 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:24:04,204 - INFO - Starting request to airplanes.live
+2026-08-12 18:24:04,747 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 1 seconds...
+2026-08-12 18:24:04,748 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:24:05,749 - INFO - Starting request to airplanes.live
+2026-08-12 18:24:06,293 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 2 seconds...
+2026-08-12 18:24:06,293 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:24:08,294 - INFO - Starting request to airplanes.live
+2026-08-12 18:24:08,762 - WARNING - Request failed: 403 Client Error: Forbidden for url: https://api.airplanes.live/v2/mil. Retrying in 4 seconds...
+2026-08-12 18:24:08,763 - ERROR - Request failed. Status code: 403: Forbidden.
+2026-08-12 18:24:12,765 - CRITICAL - Data ingestion failed after multiple attempts.
+2026-08-12 18:24:13,348 - ERROR - Unexpected error: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-08-12 18:31:04,451 - INFO - Starting request to adsb.fi
+2026-08-12 18:31:05,196 - INFO - Request successful. Status code: 200: OK. Aircraft count: 298. File saved to data\raw\raw_aircraft_20260813T013104Z.json.
+2026-08-12 18:31:05,199 - INFO - Data ingestion completed successfully.
+2026-08-12 18:31:05,859 - INFO - Validation: File loaded successfully
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae6c7f: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae04f3: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae1239: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae117c: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae57a7: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record a3ca1d: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae6861: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae143f: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record ae2125: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record adfe82: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,862 - WARNING - Validation failed for record adfe92: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae6012: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record a2b320: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record a2ec0c: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record afa18b: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae56cb: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record 0d0961: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record af3bc5: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae14ce: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae627f: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae6300: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae4e99: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae4e95: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,863 - WARNING - Validation failed for record ae14a3: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae5e0c: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record a33d33: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae4819: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae5685: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae4a1d: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae4e96: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae2edb: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae2ef1: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,864 - WARNING - Validation failed for record ae4a28: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae7423: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae2eda: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae54e9: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae1c0b: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae2edd: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae1ff0: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae099f: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae73fd: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae2025: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record af38c4: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae036e: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae6356: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae1191: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae1ddd: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae2677: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,865 - WARNING - Validation failed for record ae204d: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae1dce: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae6905: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae67e8: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae269f: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae67d0: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae6a15: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae74d3: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae5dd7: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae51cd: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae4814: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae77cc: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae1f45: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,866 - WARNING - Validation failed for record ae5fea: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae598a: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae10bf: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae0812: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae07f7: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 480c47: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 4b8392: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 881409: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 881b6a: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 7cf9dc: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e731: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e723: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e722: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e730: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e72d: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 7cf9e8: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 76e726: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 7cf864: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 7cf839: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae0134: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record ae1a26: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,867 - WARNING - Validation failed for record 7cfa05: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cf9fd: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cf9fc: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cf98d: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cfaff: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cfaa0: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cf9fa: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 7cf8f1: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record c87f26: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584665900.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 3b7b8b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3b7b8b', 'ca...014', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record ae4e1c: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,868 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record 507f87: 1 validation error for PositionModel
+timestamp
+  Value error, Timestamp is in the future. Invalid data. [type=value_error, input_value=1786584666000.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:05,869 - WARNING - Validation failed for record af8487: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'af8487', 'ca...0', 'emergency': 'none'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-12 18:31:23,950 - INFO - Transform: loaded 192 raw validated rows
+2026-08-12 18:31:23,971 - INFO - Transform: wrote 192 rows to data/processed/clean_aircraft_20260813T013123Z.parquet
