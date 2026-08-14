@@ -27,20 +27,22 @@
 - [x] Output: `validated_aircraft_<timestamp>.parquet`
 
 ## Phase 4 — Transformation (Polars)
-- [ ] Timestamp normalization
-- [ ] Speed unit conversion (knots → mph)
-- [ ] Climb rate computed
-- [ ] Acceleration computed
-- [ ] Heading change computed
-- [ ] Aircraft type classification
-- [ ] Duplicates removed, sorted by timestamp
-- [ ] Output: `clean_aircraft_<timestamp>.parquet`
+- [x] Timestamp normalization
+- [x] Speed unit conversion (knots → mph)
+- [x] Climb rate computed
+- [x] Acceleration computed
+- [x] Heading change computed
+- [x] Aircraft type classification
+- [x] Duplicates removed, sorted by timestamp
+- [x] Output: `clean_aircraft_<timestamp>.parquet`
+
+**Data source note:** switched from airplanes.live to adsb.fi (`opendata.adsb.fi/api/v2/mil`) mid-Phase-4 — airplanes.live and adsb.one both started returning 403s (shared infra, airplanes.live's own error pointed to contacting them directly). adsb.fi is free, same ADSBX-lineage schema, no code changes needed beyond the URL. README/ROADMAP data-source references still say airplanes.live and need updating.
 
 ## Phase 5 — Schema Design (Star Schema)
-- [ ] `fact_aircraft_activity` designed
-- [ ] `dim_aircraft` designed
-- [ ] `dim_location` designed
-- [ ] Field list finalized (aircraft_id, timestamp, lat, lon, altitude, speed, climb_rate, aircraft_type, region)
+- [x] `fact_aircraft_activity` designed
+- [x] `dim_aircraft` designed
+- [x] `dim_location` designed
+- [x] Field list finalized (aircraft_id, timestamp, lat, lon, altitude, speed, climb_rate, aircraft_type, region)
 
 ## Phase 6 — Storage (DuckDB)
 - [ ] DuckDB file initialized (`pipeline.duckdb`)
