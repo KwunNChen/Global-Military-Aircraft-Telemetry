@@ -6,9 +6,26 @@ logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="
 
 TYPE_TO_CATEGORY = {
     "F15": "fighter", "F16": "fighter", "F22": "fighter", "F35": "fighter", "F18": "fighter",
-    "KC135": "tanker", "KC10": "tanker", "KC46": "tanker",
+    "KC135": "tanker", "KC10": "tanker", "KC46": "tanker", "K35R": "tanker",
     "C130": "transport", "C17": "transport", "C5": "transport", "C40": "transport",
+    "C30J": "transport", "B350": "transport", "C560": "transport", "B762": "transport",
+    "BE20": "transport", "A332": "transport", "C5M": "transport", "CN35": "transport",
+    "C27J": "transport", "B748": "transport", "AT76": "transport", "LJ35": "transport",
+    "B737": "transport", "BE9L": "transport", "B736": "transport", "E135": "transport",
+    "B742": "transport", "AN12": "transport", "DH8C": "transport", "B738": "transport",
+    "FA7X": "transport", "B190": "transport", "PC24": "transport", "B38M": "transport",
+    "FA8X": "transport", "D328": "transport", "C208": "transport", "A319": "transport",
+    "A320": "transport", "AT72": "transport", "GLF5": "transport", "IL76": "transport",
+    "V22": "transport",
     "E3TF": "isr", "RC135": "isr", "U2": "isr", "MQ9": "isr", "P8": "isr",
+    "E737": "isr", "E2": "isr",
+    # rotary-wing, all roles (utility/attack/transport)
+    "H60": "helicopter", "EC45": "helicopter", "H47": "helicopter", "AS65": "helicopter",
+    "A119": "helicopter", "H64": "helicopter", "EC35": "helicopter", "H53S": "helicopter",
+    "B212": "helicopter", "A169": "helicopter", "AS32": "helicopter", "NH90": "helicopter",
+    "B429": "helicopter", "A139": "helicopter", "W3": "helicopter",
+    "TEX2": "trainer", "PC21": "trainer", "F260": "trainer", "G120": "trainer",
+    "DA40": "trainer", "T38": "trainer", "P28A": "trainer", "CT4": "trainer", "HAWK": "trainer",
 }
 
 
