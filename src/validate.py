@@ -9,34 +9,18 @@ import json
 
 logging.basicConfig(level=logging.INFO, filename ="data/pipeline.log",filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
 
-def get_latest_file(directory="data/raw"):
+def get_all_files(directory="data/raw"):
     files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
     if not files:
         return None
-
-    latest_file = None
-    latest_time = None
-
+    acceptable_filepath = []
     for file in files:
         if "aircraft_" in file:
-            path = Path(file)
-            file_stem = path.stem
-            parts = file_stem.split("_")
-            timestamp_str = parts[2].replace("Z", "").strip()
-        else:
-            continue
-        try:
-            timestamp = datetime.strptime(timestamp_str, "%Y%m%dT%H%M%S")
-        except ValueError:
-            continue
-        if latest_time is None or timestamp > latest_time:
-            latest_time = timestamp
-            latest_file = os.path.join(directory, file)
-    return latest_file
+            acceptable_filepath.append(os.path.join(directory, file))   
+    return acceptable_filepath
 
-def load_file():
+def load_file(filepath):
     try:
-        filepath = get_latest_file()
         path = Path(filepath)
         if not path.exists():
             raise FileNotFoundError(f"File not found: {filepath}")
@@ -109,11 +93,21 @@ def validate_models(telemetry_record):
     return valid_records
 
 if __name__ == "__main__":
-    file = load_file()
-    if file is not None:
-        logging.info("Validation: File loaded successfully")
-        saved_telemetry = build_models(file)
-        validated_data = validate_models(saved_telemetry)
-        df = pl.DataFrame(validated_data)
-        timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-        df.write_parquet(f"data/processed/validated_aircraft_{timestamp}.parquet")
+    filepaths = get_all_files()
+    all_telemetry = []
+    loaded = 0
+    error = 0
+
+    for file in filepaths:
+        content = load_file(file)
+        if content is not None:
+            all_telemetry.extend(build_models(content))
+            loaded += 1
+        else:
+            error += 1
+
+    validated_data = validate_models(all_telemetry)
+    df = pl.DataFrame(validated_data)
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    df.write_parquet(f"data/processed/validated_aircraft_{timestamp}.parquet")
+    logging.info(f"Validation: processed {loaded} files ({error} failed), wrote {len(validated_data)} rows")

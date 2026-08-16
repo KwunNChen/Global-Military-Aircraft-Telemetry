@@ -42,7 +42,6 @@ def add_deltas(dataframe):
     ])
     return dataframe
 
-
 def convert_units(dataframe):
     return dataframe.with_columns(
         (pl.col("gs") * 1.15078).alias("speed_mph")
@@ -51,9 +50,21 @@ def convert_units(dataframe):
 
 def classify_type(dataframe):
     return dataframe.with_columns(
-        pl.col("type_code").replace(TYPE_TO_CATEGORY, default="unknown").alias("aircraft_type")
+        pl.col("type_code").replace_strict(TYPE_TO_CATEGORY, default="unknown").alias("aircraft_type")
     )
 
+def make_region(dataframe):
+    return dataframe.with_columns(
+        pl.when(
+            (pl.col("lat") >= 24) & (pl.col("lat") <= 50) & (pl.col("lon") >= -125) & (pl.col("lon") <= -66)
+        ).then(pl.lit("CONUS")).when(
+            (pl.col("lat") >= 35) & (pl.col("lat") <= 71) & (pl.col("lon") >= -25) & (pl.col("lon") <= 40)
+        ).then(pl.lit("Europe")).when(
+            (pl.col("lat") >= 12) & (pl.col("lat") <= 42) & (pl.col("lon") >= 34) & (pl.col("lon") <= 63)
+        ).then(pl.lit("Middle East")).when(
+            (pl.col("lat") >= -50) & (pl.col("lat") <= 55) & (pl.col("lon") >= 90) & (pl.col("lon") <= 180)
+        ).then(pl.lit("Indo-Pacific")).otherwise(pl.lit("other")).alias("region")
+    )
 
 def save(dataframe):
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -71,6 +82,7 @@ if __name__ == "__main__":
     dataframe = add_deltas(dataframe)
     dataframe = convert_units(dataframe)
     dataframe = classify_type(dataframe)
+    dataframe = make_region(dataframe)
 
     path = save(dataframe)
     logging.info(f"Transform: wrote {dataframe.height} rows to {path}")

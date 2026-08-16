@@ -1,5 +1,5 @@
 CREATE_DIM_AIRCRAFT = """
-CREATE TABLE dim_aircraft (
+CREATE TABLE IF NOT EXISTS dim_aircraft (
     aircraft_id VARCHAR PRIMARY KEY,
     registration VARCHAR,
     type_code VARCHAR,
@@ -8,14 +8,13 @@ CREATE TABLE dim_aircraft (
 """
 
 CREATE_DIM_LOCATION = """
-    CREATE TABLE dim_location (
+    CREATE TABLE IF NOT EXISTS dim_location (
     region VARCHAR PRIMARY KEY
 );
 """
 
 CREATE_FACT_AIRCRAFT_ACTIVITY = """
-CREATE TABLE fact_aircraft_activity (
-    activity_id INTEGER PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS fact_aircraft_activity (
     aircraft_id VARCHAR,
     FOREIGN KEY (aircraft_id) REFERENCES dim_aircraft(aircraft_id),
     region VARCHAR,
@@ -28,6 +27,7 @@ CREATE TABLE fact_aircraft_activity (
     climb_rate DOUBLE,
     acceleration DOUBLE,
     heading_change DOUBLE,
-    on_ground BOOLEAN
+    on_ground BOOLEAN,
+    PRIMARY KEY (aircraft_id, timestamp)
 );
 """
