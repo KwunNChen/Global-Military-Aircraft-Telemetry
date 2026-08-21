@@ -208,3 +208,271 @@
 2026-08-15 21:05:26,839 - INFO - Connecting to DuckDB database...
 2026-08-15 21:05:26,871 - INFO - Tables created successfully.
 2026-08-15 21:05:26,970 - INFO - Data loaded into DuckDB successfully.
+2026-08-20 23:02:08,584 - INFO - Starting request to adsb.fi
+2026-08-20 23:02:09,259 - INFO - Request successful. Status code: 200: OK. Aircraft count: 140. File saved to data\raw\raw_aircraft_20260821T060208Z.json.
+2026-08-20 23:02:09,261 - INFO - Data ingestion completed successfully.
+2026-08-20 23:02:29,823 - WARNING - Validation failed for record 3b7b8b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3b7b8b', 'ca...014', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,823 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,824 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,825 - WARNING - Validation failed for record af8487: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'af8487', 'ca...0', 'emergency': 'none'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,825 - WARNING - Validation failed for record 40002c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40002c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,825 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,825 - WARNING - Validation failed for record c2e779: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'c2e779', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,825 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,826 - WARNING - Validation failed for record 3ea3af: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3ea3af', 'ca...777', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 3ea3af: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3ea3af', 'ca...777', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,827 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 400030: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400030', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,828 - WARNING - Validation failed for record 354000: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '354000', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 377967: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '377967', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 400032: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400032', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record ae0368: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'ae0368', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,829 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,830 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,830 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,830 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,830 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record 40000e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record adf993: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf993', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,831 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-20 23:02:29,949 - INFO - Validation: processed 6 files (0 failed), wrote 656 rows
+2026-08-20 23:02:33,274 - INFO - Transform: loaded 2263 raw validated rows
+2026-08-20 23:02:33,449 - INFO - Transform: wrote 656 rows to data/processed/clean_aircraft_20260821T060233Z.parquet
+2026-08-20 23:02:40,536 - INFO - Connecting to DuckDB database...
+2026-08-20 23:02:40,610 - INFO - Tables created successfully.
+2026-08-20 23:02:40,777 - INFO - Data loaded into DuckDB successfully.
+2026-08-20 23:02:40,785 - INFO - Aircraft by type: [('tanker', 13), ('unknown', 238), ('transport', 120), ('isr', 6), ('trainer', 42), ('helicopter', 93)]
+2026-08-21 15:51:56,460 - INFO - Connecting to DuckDB database...
+2026-08-21 15:51:56,525 - INFO - Tables created successfully.
+2026-08-21 15:51:56,648 - INFO - Data loaded into DuckDB successfully.
+2026-08-21 15:51:56,656 - INFO - Aircraft by type: [('transport', 120), ('isr', 6), ('trainer', 42), ('tanker', 13), ('unknown', 238), ('helicopter', 93)]
+2026-08-21 15:51:56,660 - INFO - Average altitude by region: [('CONUS', 9267.956656346749), ('other', 11188.333333333334), ('Europe', 25083.108108108107), ('Middle East', 11839.18918918919), ('Indo-Pacific', 10757.936507936507)]
+2026-08-21 15:51:56,668 - INFO - Speed statistics by aircraft type: [('unknown', 0.0, 658.2461599999999, 191.81643261135378), ('helicopter', 0.0, 166.057554, 98.47698310588231), ('tanker', 262.95322999999996, 563.8822, 437.10460333333333), ('trainer', 0.0, 393.106448, 213.6409036097561), ('isr', 0.0, 420.0347, 241.06539439999997), ('transport', 0.0, 596.449274, 348.8197014205608)]
+2026-08-21 15:58:24,123 - INFO - Connecting to DuckDB database...
+2026-08-21 15:58:24,152 - INFO - Tables created successfully.
+2026-08-21 15:58:24,205 - INFO - Data loaded into DuckDB successfully.
+2026-08-21 15:58:24,208 - INFO - Aircraft by type: [('unknown', 238), ('trainer', 42), ('tanker', 13), ('helicopter', 93), ('transport', 120), ('isr', 6)]
+2026-08-21 15:58:24,211 - INFO - Average altitude by region: [('Indo-Pacific', 10757.936507936507), ('Middle East', 11839.18918918919), ('CONUS', 9267.956656346749), ('other', 11188.333333333334), ('Europe', 25083.108108108107)]
+2026-08-21 15:58:24,215 - INFO - Speed statistics by aircraft type: [('unknown', 0.0, 658.2461599999999, 191.81643261135378), ('trainer', 0.0, 393.106448, 213.6409036097561), ('isr', 0.0, 420.0347, 241.06539439999997), ('transport', 0.0, 596.449274, 348.8197014205608), ('helicopter', 0.0, 166.057554, 98.47698310588231), ('tanker', 262.95322999999996, 563.8822, 437.10460333333333)]

@@ -45,10 +45,10 @@
 - [x] Field list finalized (aircraft_id, timestamp, lat, lon, altitude, speed, climb_rate, aircraft_type, region)
 
 ## Phase 6 — Storage (DuckDB)
-- [ ] DuckDB file initialized (`pipeline.duckdb`)
-- [ ] Schema tables created
-- [ ] Transformed data loaded
-- [ ] Test OLAP queries run (count by type, avg altitude by region, speed distribution by class)
+- [x] DuckDB file initialized (`pipeline.duckdb`)
+- [x] Schema tables created
+- [x] Transformed data loaded
+- [x] Test OLAP queries run (count by type, avg altitude by region, speed distribution by class)
 
 ## Phase 7 — Orchestration (Prefect)
 - [ ] `ingest_flow`

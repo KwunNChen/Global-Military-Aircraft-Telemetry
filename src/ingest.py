@@ -16,7 +16,6 @@ def fetch_data():
             headers = {"User-Agent": "MilitaryAircraftPipeline/1.0"}
             response = requests.get("https://opendata.adsb.fi/api/v2/mil", headers=headers, timeout=10)
             response.raise_for_status() #Except triggers 
-            # Below = response works
             data = response.json()
             with open(filepath, "w") as file:
                 json.dump(data, file)

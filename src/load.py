@@ -32,9 +32,17 @@ def load_batch(con):
         FROM read_parquet('data/processed/clean_aircraft_*.parquet')
         ON CONFLICT DO NOTHING""")
 
+def run_test_queries(con):
+    result = con.execute("SELECT aircraft_type, COUNT(*) FROM dim_aircraft GROUP BY aircraft_type").fetchall()
+    logging.info(f"Aircraft by type: {result}")
+    result = con.execute("SELECT region, AVG(altitude) FROM fact_aircraft_activity GROUP BY region").fetchall()
+    logging.info(f"Average altitude by region: {result}")
+    result = con.execute("SELECT aircraft_type, MIN(speed), MAX(speed), AVG(speed) FROM fact_aircraft_activity JOIN dim_aircraft ON fact_aircraft_activity.aircraft_id = dim_aircraft.aircraft_id GROUP BY aircraft_type").fetchall()
+    logging.info(f"Speed statistics by aircraft type: {result}")
 
 if __name__ == "__main__":
     with get_connection() as con:
         create_tables(con)
         load_batch(con)
         logging.info("Data loaded into DuckDB successfully.")
+        run_test_queries(con)

@@ -2,7 +2,7 @@
 
 A reproducible data engineering pipeline that ingests open-source military aircraft telemetry, validates it, transforms it, stores it in an analytical database, and produces ML-ready datasets for defense activity analysis.
 
-> Status: **Phase 6 — Storage (DuckDB)** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
+> Status: **Phase 7 — Orchestration (Prefect)** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
 
 ## Overview
 
@@ -89,7 +89,28 @@ No API key required (adsb.fi is open access). The `.env` file is still gitignore
 
 ## Example Queries
 
-_To be filled in during Phase 6 — DuckDB OLAP queries against the star schema (e.g. aircraft counts by type, average altitude by region, speed distribution by aircraft class)._
+Run against a live snapshot of 656 validated observations across 512 aircraft.
+
+**Aircraft count by type**
+```sql
+SELECT aircraft_type, COUNT(*) FROM dim_aircraft GROUP BY aircraft_type
+```
+transport: 120, unknown: 238, helicopter: 93, trainer: 42, tanker: 13, isr: 6
+
+**Average altitude by region**
+```sql
+SELECT region, AVG(altitude) FROM fact_aircraft_activity GROUP BY region
+```
+Europe: 25,083 ft, Middle East: 11,839 ft, other: 11,188 ft, Indo-Pacific: 10,758 ft, CONUS: 9,268 ft
+
+**Speed distribution by aircraft class**
+```sql
+SELECT aircraft_type, MIN(speed), MAX(speed), AVG(speed)
+FROM fact_aircraft_activity
+JOIN dim_aircraft ON fact_aircraft_activity.aircraft_id = dim_aircraft.aircraft_id
+GROUP BY aircraft_type
+```
+Tankers average fastest (437 mph), helicopters slowest (98 mph), consistent with their real-world roles. Minimum speeds bottom out at 0 mph across most classes, aircraft caught on the ground between snapshots.
 
 ## Roadmap
 
