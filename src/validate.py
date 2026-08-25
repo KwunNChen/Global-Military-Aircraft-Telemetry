@@ -8,8 +8,6 @@ import os
 import logging
 import json
 
-logging.basicConfig(level=logging.INFO, filename ="data/pipeline.log",filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
-
 def get_all_files(directory="data/raw"):
     files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
     if not files:

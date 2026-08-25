@@ -3,8 +3,6 @@ import logging
 from datetime import datetime, timezone
 from prefect import task
 
-logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
-
 TYPE_TO_CATEGORY = {
     "F15": "fighter", "F16": "fighter", "F22": "fighter", "F35": "fighter", "F18": "fighter",
     "KC135": "tanker", "KC10": "tanker", "KC46": "tanker", "K35R": "tanker",

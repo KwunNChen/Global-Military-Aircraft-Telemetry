@@ -5,7 +5,7 @@ from transform import run_transform
 from load import run_load
 import logging
 
-logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s", force = True)
 
 @flow
 def ingest_flow():

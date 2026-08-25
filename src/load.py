@@ -3,8 +3,6 @@ import logging
 from schema import CREATE_DIM_AIRCRAFT, CREATE_DIM_LOCATION, CREATE_FACT_AIRCRAFT_ACTIVITY
 from prefect import task
 
-logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
-
 def get_connection():
     logging.info("Connecting to DuckDB database...")
     return duckdb.connect("pipeline.duckdb")
