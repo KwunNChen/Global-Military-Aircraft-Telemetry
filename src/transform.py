@@ -1,6 +1,7 @@
 import polars as pl
 import logging
 from datetime import datetime, timezone
+from prefect import task
 
 logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -89,8 +90,8 @@ def save(dataframe):
     dataframe.write_parquet(path)
     return path
 
-
-if __name__ == "__main__":
+@task
+def run_transform():
     dataframe = load_data()
     logging.info(f"Transform: loaded {dataframe.height} raw validated rows")
 
@@ -103,4 +104,6 @@ if __name__ == "__main__":
 
     path = save(dataframe)
     logging.info(f"Transform: wrote {dataframe.height} rows to {path}")
-    print(f"Wrote {dataframe.height} rows to {path}")
+
+if __name__ == "__main__":
+    run_transform()

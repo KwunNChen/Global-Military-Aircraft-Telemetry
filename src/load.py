@@ -1,6 +1,7 @@
 import duckdb
 import logging
 from schema import CREATE_DIM_AIRCRAFT, CREATE_DIM_LOCATION, CREATE_FACT_AIRCRAFT_ACTIVITY
+from prefect import task
 
 logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -40,9 +41,13 @@ def run_test_queries(con):
     result = con.execute("SELECT aircraft_type, MIN(speed), MAX(speed), AVG(speed) FROM fact_aircraft_activity JOIN dim_aircraft ON fact_aircraft_activity.aircraft_id = dim_aircraft.aircraft_id GROUP BY aircraft_type").fetchall()
     logging.info(f"Speed statistics by aircraft type: {result}")
 
-if __name__ == "__main__":
+@task
+def run_load():
     with get_connection() as con:
         create_tables(con)
         load_batch(con)
         logging.info("Data loaded into DuckDB successfully.")
         run_test_queries(con)
+
+if __name__ == "__main__":
+    run_load()

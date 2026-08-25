@@ -3,6 +3,7 @@ from models import AircraftModel, PositionModel
 from pydantic import BaseModel, ValidationError
 from datetime import datetime, timezone
 import polars as pl
+from prefect import task
 import os
 import logging
 import json
@@ -92,12 +93,13 @@ def validate_models(telemetry_record):
             logging.warning(f"Validation failed for record {record.get('acft_ID')}: {e}")
     return valid_records
 
-if __name__ == "__main__":
+@task
+def run_validation():
     filepaths = get_all_files()
     all_telemetry = []
     loaded = 0
     error = 0
-
+    
     for file in filepaths:
         content = load_file(file)
         if content is not None:
@@ -105,9 +107,12 @@ if __name__ == "__main__":
             loaded += 1
         else:
             error += 1
-
+    
     validated_data = validate_models(all_telemetry)
     df = pl.DataFrame(validated_data)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     df.write_parquet(f"data/processed/validated_aircraft_{timestamp}.parquet")
     logging.info(f"Validation: processed {loaded} files ({error} failed), wrote {len(validated_data)} rows")
+
+if __name__ == "__main__":
+    run_validation()

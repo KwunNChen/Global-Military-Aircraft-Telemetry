@@ -4,7 +4,9 @@ import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
+from prefect import task
 
+@task
 def fetch_data():
     for i in range(3):
         timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
