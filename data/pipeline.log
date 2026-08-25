@@ -416,3 +416,678 @@ See https://docs.prefect.io/v3/concepts/server#how-to-guides for more informatio
 2026-08-25 13:33:50,007 - INFO - Finished in state Completed()
 2026-08-25 13:33:50,030 - INFO - HTTP Request: POST http://127.0.0.1:8119/api/logs/ "HTTP/1.1 201 Created"
 2026-08-25 13:33:50,032 - INFO - Stopping temporary server on http://127.0.0.1:8119
+2026-08-25 14:14:14,360 - INFO - Starting temporary server on http://127.0.0.1:8905
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+2026-08-25 14:14:26,655 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/health "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,725 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/admin/version "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,767 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=ee5d7513-c84d-4c26-b77a-a4276b0f24b3 "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:27,804 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,881 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:27,911 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/439332aa-a53e-4861-bf44-930a109881f2/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:27,922 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flow_runs/439332aa-a53e-4861-bf44-930a109881f2 "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,930 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/admin/storage "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,935 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/admin/storage "HTTP/1.1 200 OK"
+2026-08-25 14:14:27,936 - INFO - Beginning flow run 'active-meerkat' for flow 'full-pipeline-flow'
+2026-08-25 14:14:28,434 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=1ff9bce0-c583-4dff-bb80-1b58480bcf3b "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:28,514 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/task_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:28,538 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/filter "HTTP/1.1 200 OK"
+2026-08-25 14:14:28,547 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:28,626 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:28,705 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/2431b054-1c10-4e9c-9529-8f4f5874b516/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:28,718 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flow_runs/2431b054-1c10-4e9c-9529-8f4f5874b516 "HTTP/1.1 200 OK"
+2026-08-25 14:14:28,719 - INFO - Beginning subflow run 'precious-ostrich' for flow 'ingest-flow'
+2026-08-25 14:14:28,747 - INFO - Starting request to adsb.fi
+2026-08-25 14:14:29,319 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/admin/version "HTTP/1.1 200 OK"
+2026-08-25 14:14:29,397 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flows/c96b5170-98ac-4c51-9c72-661e50fcc532 "HTTP/1.1 200 OK"
+2026-08-25 14:14:29,410 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flows/0dace6de-de97-4b2c-9ffb-bf92c6b214f1 "HTTP/1.1 200 OK"
+2026-08-25 14:14:29,981 - INFO - Request successful. Status code: 200: OK. Aircraft count: 339. File saved to data\raw\raw_aircraft_20260825T211428Z.json.
+2026-08-25 14:14:30,029 - INFO - Finished in state Completed()
+2026-08-25 14:14:30,140 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/2431b054-1c10-4e9c-9529-8f4f5874b516/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:30,419 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=58f5a3c4-1cc2-49f1-919f-a5ef41be4153 "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:30,495 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/logs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:30,723 - INFO - Finished in state Completed()
+2026-08-25 14:14:31,177 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=0d9e4424-ec4b-4d33-b2e2-a5e9c1def725 "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:31,244 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/task_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:31,253 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/filter "HTTP/1.1 200 OK"
+2026-08-25 14:14:31,261 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:31,337 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:31,440 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/addd85be-8a65-4d5e-b08e-5b210f310463/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:31,456 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flow_runs/addd85be-8a65-4d5e-b08e-5b210f310463 "HTTP/1.1 200 OK"
+2026-08-25 14:14:31,458 - INFO - Beginning subflow run 'brainy-python' for flow 'validation-flow'
+2026-08-25 14:14:31,479 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flows/c7972c5c-d639-4ff5-b6a8-eeccf4b28f44 "HTTP/1.1 200 OK"
+2026-08-25 14:14:31,862 - WARNING - Validation failed for record 3b7b8b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3b7b8b', 'ca...014', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,863 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,865 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,866 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,867 - WARNING - Validation failed for record af8487: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'af8487', 'ca...0', 'emergency': 'none'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,871 - WARNING - Validation failed for record 40002c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40002c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,871 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,873 - WARNING - Validation failed for record c2e779: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'c2e779', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,873 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,874 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,875 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,875 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,876 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,876 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,876 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,876 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,876 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,877 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,878 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,879 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,879 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,880 - WARNING - Validation failed for record 3ea3af: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3ea3af', 'ca...777', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,880 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,881 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,883 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,886 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,886 - WARNING - Validation failed for record 3ea3af: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3ea3af', 'ca...777', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,886 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,890 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,891 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,891 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,892 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,892 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,892 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,892 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,892 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,893 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,898 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,900 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,900 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,900 - WARNING - Validation failed for record 400030: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400030', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record 354000: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '354000', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record 377967: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '377967', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record 400032: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400032', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,901 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record ae0368: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'ae0368', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,902 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,905 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,907 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,908 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,909 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,909 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,909 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,910 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,910 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,910 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,910 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,911 - WARNING - Validation failed for record 40000e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,911 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,911 - WARNING - Validation failed for record adf993: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf993', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,911 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,925 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,925 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,926 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,926 - WARNING - Validation failed for record 40002f: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40002f', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,926 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,927 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,927 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,928 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,929 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,929 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,929 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,930 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,930 - WARNING - Validation failed for record 400030: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400030', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,931 - WARNING - Validation failed for record c31317: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'c31317', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,943 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,943 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record 40002f: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40002f', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record adfbdd: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbdd', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,944 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,945 - WARNING - Validation failed for record 40000e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,946 - WARNING - Validation failed for record c31317: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'c31317', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,946 - WARNING - Validation failed for record ae0cd1: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'ae0cd1', 'ca...0', 'emergency': 'none'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,955 - WARNING - Validation failed for record 3f4388: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '3f4388', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,956 - WARNING - Validation failed for record 43c31f: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '43c31f', 'ca...074', 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,956 - WARNING - Validation failed for record adf991: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf991', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,956 - WARNING - Validation failed for record 4ca331: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '4ca331', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,956 - WARNING - Validation failed for record 40002e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40002e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,957 - WARNING - Validation failed for record 400025: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400025', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,957 - WARNING - Validation failed for record 400008: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400008', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,957 - WARNING - Validation failed for record adfbe0: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbe0', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record adf992: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adf992', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record 400006: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400006', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record adfbde: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': 'adfbde', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record 40001c: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40001c', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record 40000b: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40000b', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,958 - WARNING - Validation failed for record 40003e: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '40003e', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:31,959 - WARNING - Validation failed for record 400032: 1 validation error for PositionModel
+  Value error, no position data available [type=value_error, input_value={'acft_ID': '400032', 'ca...None, 'emergency': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+2026-08-25 14:14:32,209 - INFO - Validation: processed 9 files (0 failed), wrote 1690 rows
+2026-08-25 14:14:32,218 - INFO - Finished in state Completed()
+2026-08-25 14:14:32,397 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/addd85be-8a65-4d5e-b08e-5b210f310463/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:32,463 - INFO - Finished in state Completed()
+2026-08-25 14:14:32,549 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/logs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:33,151 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=49f4ac21-0ef8-4991-a50f-6f5301e0ee96 "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:33,209 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/task_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:33,237 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/filter "HTTP/1.1 200 OK"
+2026-08-25 14:14:33,263 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:33,365 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:33,458 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/98697cbd-7831-4a9b-ad11-130437255a6a/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:33,470 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flow_runs/98697cbd-7831-4a9b-ad11-130437255a6a "HTTP/1.1 200 OK"
+2026-08-25 14:14:33,471 - INFO - Beginning subflow run 'arrogant-warthog' for flow 'transformation-flow'
+2026-08-25 14:14:33,496 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flows/d5a210c4-54da-4248-a209-df3a190fdc29 "HTTP/1.1 200 OK"
+2026-08-25 14:14:33,636 - INFO - Transform: loaded 6995 raw validated rows
+2026-08-25 14:14:33,795 - INFO - Transform: wrote 1690 rows to data/processed/clean_aircraft_20260825T211433Z.parquet
+2026-08-25 14:14:33,798 - INFO - Finished in state Completed()
+2026-08-25 14:14:33,847 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/98697cbd-7831-4a9b-ad11-130437255a6a/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:34,476 - INFO - Finished in state Completed()
+2026-08-25 14:14:34,633 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/logs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:35,304 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=f28ec7a9-6231-492b-99ef-a4327283086e "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:35,336 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/task_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:35,350 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/filter "HTTP/1.1 200 OK"
+2026-08-25 14:14:35,362 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:35,403 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:35,438 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/a90ef712-8578-41e7-8b72-1de0e8059d04/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:35,448 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flow_runs/a90ef712-8578-41e7-8b72-1de0e8059d04 "HTTP/1.1 200 OK"
+2026-08-25 14:14:35,449 - INFO - Beginning subflow run 'portable-giraffe' for flow 'loading-flow'
+2026-08-25 14:14:35,457 - INFO - Connecting to DuckDB database...
+2026-08-25 14:14:35,462 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/flows/6d5b26a0-80bb-4382-a263-cecccb6567b1 "HTTP/1.1 200 OK"
+2026-08-25 14:14:35,552 - INFO - Tables created successfully.
+2026-08-25 14:14:35,758 - INFO - Data loaded into DuckDB successfully.
+2026-08-25 14:14:35,769 - INFO - Aircraft by type: [('tanker', 22), ('trainer', 192), ('helicopter', 245), ('unknown', 328), ('transport', 235), ('isr', 12)]
+2026-08-25 14:14:35,773 - INFO - Average altitude by region: [('Indo-Pacific', 10845.279720279721), ('Middle East', 12633.018867924528), ('CONUS', 10030.539637058262), ('other', 11305.729166666666), ('Europe', 14658.59375)]
+2026-08-25 14:14:35,783 - INFO - Speed statistics by aircraft type: [('tanker', 204.26344999999998, 579.99312, 416.79250243478253), ('unknown', 0.0, 695.07112, 208.92163420430109), ('helicopter', 0.0, 1075.9793, 108.67414232398752), ('isr', 0.0, 457.66520599999996, 236.88467835294114), ('transport', 0.0, 695.301276, 324.6031533312103), ('trainer', 0.0, 680.1109799999999, 291.2839951249999)]
+2026-08-25 14:14:35,852 - INFO - Finished in state Completed()
+2026-08-25 14:14:35,969 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/a90ef712-8578-41e7-8b72-1de0e8059d04/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:36,452 - INFO - Finished in state Completed()
+2026-08-25 14:14:36,454 - INFO - Full Pipeline ran sucessfully
+2026-08-25 14:14:36,499 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flow_runs/439332aa-a53e-4861-bf44-930a109881f2/set_state "HTTP/1.1 201 Created"
+2026-08-25 14:14:36,669 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/logs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:37,421 - INFO - Finished in state Completed()
+2026-08-25 14:14:37,637 - WARNING - Cannot schedule flows on an ephemeral server; run `prefect server start` to start the scheduler.
+2026-08-25 14:14:39,379 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/logs/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:39,383 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/deployments/name/full-pipeline-flow/mil-aircraft-pipeline "HTTP/1.1 404 Not Found"
+2026-08-25 14:14:39,898 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=da63e36b-6fc6-4fce-89d5-609472291dfb "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:39,908 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/flows/ "HTTP/1.1 200 OK"
+2026-08-25 14:14:40,072 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/ "HTTP/1.1 201 Created"
+2026-08-25 14:14:40,153 - INFO - HTTP Request: DELETE http://127.0.0.1:8905/api/automations/owned-by/prefect.deployment.a49b73e9-04ab-435e-9c2b-3cd81f601170 "HTTP/1.1 202 Accepted"
+2026-08-25 14:14:41,184 - INFO - HTTP Request: GET http://127.0.0.1:8905/api/csrf-token?client=5403d666-6af9-4a31-b448-a5ea86a2aed9 "HTTP/1.1 422 Unprocessable Content"
+2026-08-25 14:14:41,199 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:14:53,477 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:06,438 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:16,736 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:26,245 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:37,180 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:47,823 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:15:55,973 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:04,542 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:14,706 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:26,847 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:35,631 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:46,679 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:16:54,329 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:02,593 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:12,444 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:21,999 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:30,087 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:39,626 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:49,226 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:17:58,129 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:06,219 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:17,237 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:28,287 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:37,650 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:47,541 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:18:56,813 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:04,795 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:13,832 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:24,100 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:34,855 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:46,025 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:19:56,990 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:20:09,000 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:20:18,198 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:20:28,840 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:20:37,108 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:20:48,452 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:00,764 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:13,048 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:25,771 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:35,040 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:44,876 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:21:57,376 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:08,572 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:18,022 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:25,677 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:38,269 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:47,737 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:22:56,350 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:05,499 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:14,113 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:24,798 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:36,052 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:46,536 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:23:57,438 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:07,550 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:16,020 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:23,760 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:34,596 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:44,339 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:24:53,466 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:03,960 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:15,626 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:25,447 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:33,714 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:45,188 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:25:54,631 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:26:06,053 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:26:14,673 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:26:24,993 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:26:37,007 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:26:49,394 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:02,109 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:10,139 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:19,724 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:28,027 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:36,302 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:47,345 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:27:59,675 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:28:09,444 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:28:22,356 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:28:34,913 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:28:43,049 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:28:55,937 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:07,301 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:18,422 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:29,703 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:38,574 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:46,194 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:29:57,274 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:05,238 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:13,864 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:22,931 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:31,225 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:43,512 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:30:51,825 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:03,558 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:13,418 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:23,863 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:33,792 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:46,776 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:31:59,540 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:32:08,191 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:32:18,884 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:32:28,877 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:32:37,468 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:32:49,902 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:01,163 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:11,299 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:20,423 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:29,675 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:37,412 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:47,530 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:33:56,477 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:07,388 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:16,711 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:27,814 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:37,687 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:48,909 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:34:58,343 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:05,928 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:18,512 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:27,738 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:35,945 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:44,237 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:35:54,935 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:06,324 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:16,175 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:24,230 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:32,997 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:41,497 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:36:50,365 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:02,544 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:14,391 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:26,855 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:36,976 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:47,977 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:37:58,235 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:05,876 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:13,967 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:23,889 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:33,189 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:42,533 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:38:53,358 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:01,618 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:10,728 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:21,793 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:34,279 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:42,108 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:39:52,996 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:04,459 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:13,065 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:25,760 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:36,424 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:46,763 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:40:55,269 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:08,120 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:17,949 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:27,071 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:36,681 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:46,743 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:41:55,648 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:05,946 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:16,143 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:27,711 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:38,974 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:49,559 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:42:58,696 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:06,445 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:15,360 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:26,481 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:36,161 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:46,573 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:43:59,369 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:07,085 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:19,421 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:31,883 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:40,791 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:48,454 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:44:57,835 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:10,184 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:18,974 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:27,664 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:38,050 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:46,449 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:45:55,586 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:46:07,690 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:46:19,870 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:46:31,785 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:46:43,150 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:46:50,961 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:03,507 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:15,265 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:26,342 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:36,679 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:48,432 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:47:57,758 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:48:07,550 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:48:19,884 - INFO - HTTP Request: POST http://127.0.0.1:8905/api/deployments/get_scheduled_flow_runs "HTTP/1.1 200 OK"
+2026-08-25 14:48:20,079 - INFO - Pausing all deployments...
+2026-08-25 14:48:20,133 - INFO - HTTP Request: PATCH http://127.0.0.1:8905/api/deployments/a49b73e9-04ab-435e-9c2b-3cd81f601170 "HTTP/1.1 204 No Content"
+2026-08-25 14:48:20,134 - INFO - All deployments have been paused!
+2026-08-25 14:48:20,141 - INFO - Received KeyboardInterrupt, shutting down...
+2026-08-25 14:48:20,147 - INFO - Stopping temporary server on http://127.0.0.1:8905

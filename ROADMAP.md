@@ -51,12 +51,13 @@
 - [x] Test OLAP queries run (count by type, avg altitude by region, speed distribution by class)
 
 ## Phase 7 — Orchestration (Prefect)
-- [ ] `ingest_flow`
-- [ ] `validate_flow`
-- [ ] `transform_flow`
-- [ ] `load_flow`
-- [ ] `full_pipeline_flow` (chains the above)
-- [ ] Logging, retries, scheduling added
+- [x] `ingest_flow`
+- [x] `validate_flow`
+- [x] `transform_flow`
+- [x] `load_flow`
+- [x] `full_pipeline_flow` (chains the above, verified end-to-end run)
+- [x] Logging, retries added
+- [ ] Scheduling added
 
 ## Phase 8 — ML-Ready Feature Generation
 - [ ] Feature set finalized (climb_rate, acceleration, heading_change, altitude_change, speed_variability, aircraft_type, region)
