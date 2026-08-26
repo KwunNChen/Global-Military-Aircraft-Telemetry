@@ -55,7 +55,9 @@ def add_deltas(dataframe):
         (pl.col("alt_baro").diff().over("acft_ID") / (pl.col("time_delta_s") / 60)).alias("computed_climb_rate_fpm"),
         (pl.col("gs").diff().over("acft_ID") / pl.col("time_delta_s")).alias("acceleration_kts_per_s"),
         (((pl.col("heading").diff().over("acft_ID") + 180) % 360) - 180).alias("heading_change_deg"),
-    ])
+        (pl.col("alt_baro") - pl.col("alt_baro").shift(1).over("acft_ID")).alias("altitude_change"),
+        (pl.col("gs").rolling_std(window_size=5).over("acft_ID")).alias("speed_variability"),
+        ])
     return dataframe
 
 def convert_units(dataframe):

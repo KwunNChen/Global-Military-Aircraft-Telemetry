@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS fact_aircraft_activity (
     region VARCHAR,
     FOREIGN KEY (region) REFERENCES dim_location(region),
     timestamp TIMESTAMP,
+    altitude_change DOUBLE,
+    speed_variability DOUBLE,
     lat DOUBLE,
     lon DOUBLE,
     altitude DOUBLE,

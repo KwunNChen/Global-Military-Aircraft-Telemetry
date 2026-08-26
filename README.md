@@ -2,7 +2,7 @@
 
 A reproducible data engineering pipeline that ingests open-source military aircraft telemetry, validates it, transforms it, stores it in an analytical database, and produces ML-ready datasets for defense activity analysis.
 
-> Status: **Phase 7 — Orchestration (Prefect)** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
+> Status: **Phase 9 — Documentation** (in progress). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
 
 ## Overview
 

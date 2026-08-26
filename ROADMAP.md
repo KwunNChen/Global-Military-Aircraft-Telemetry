@@ -57,11 +57,11 @@
 - [x] `load_flow`
 - [x] `full_pipeline_flow` (chains the above, verified end-to-end run)
 - [x] Logging, retries added
-- [ ] Scheduling added
+- [x] Scheduling added (`.serve()`, daily interval)
 
 ## Phase 8 — ML-Ready Feature Generation
-- [ ] Feature set finalized (climb_rate, acceleration, heading_change, altitude_change, speed_variability, aircraft_type, region)
-- [ ] Output: `ml_features_<timestamp>.parquet`
+- [x] Feature set finalized (climb_rate, acceleration, heading_change, altitude_change, speed_variability, aircraft_type, region)
+- [x] Output: `ml_features_<timestamp>.parquet`
 
 ## Phase 9 — Documentation
 - [ ] README fully populated (overview, architecture, tech stack, pipeline steps, example queries, future work)

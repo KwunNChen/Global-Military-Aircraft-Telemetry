@@ -4,6 +4,7 @@ from validate import run_validation
 from transform import run_transform
 from load import run_load
 from cleanup import cleanup_monthly
+from features import run_features
 import logging
 from datetime import timedelta
 
@@ -26,14 +27,18 @@ def loading_flow():
     run_load()
 
 @flow
+def features_flow():
+    run_features()
+
+@flow
 def full_pipeline_flow():
     ingest_flow()
     validation_flow()
     transformation_flow()
     loading_flow()
+    features_flow()
     cleanup_monthly() #btw if you're auditing the code, this doesn't run monthly. It checks if something is past the monthly cutoff
     logging.info("Full Pipeline ran sucessfully")
 
 if __name__ == "__main__":
-    full_pipeline_flow()
     full_pipeline_flow.serve(name="mil-aircraft-pipeline",interval=timedelta(days = 1))

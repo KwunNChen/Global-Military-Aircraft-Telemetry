@@ -27,7 +27,7 @@ def load_batch(con):
         ON CONFLICT DO NOTHING""")
     con.execute("""
         INSERT INTO fact_aircraft_activity
-        SELECT acft_ID AS aircraft_id, region, timestamp, lat, lon, alt_baro AS altitude, speed_mph AS speed, computed_climb_rate_fpm AS climb_rate, acceleration_kts_per_s AS acceleration, heading_change_deg AS heading_change, on_ground
+        SELECT acft_ID AS aircraft_id, altitude_change, speed_variability, region, timestamp, lat, lon, alt_baro AS altitude, speed_mph AS speed, computed_climb_rate_fpm AS climb_rate, acceleration_kts_per_s AS acceleration, heading_change_deg AS heading_change, on_ground
         FROM read_parquet('data/processed/clean_aircraft_*.parquet')
         ON CONFLICT DO NOTHING""")
 
