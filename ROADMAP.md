@@ -64,8 +64,36 @@
 - [x] Output: `ml_features_<timestamp>.parquet`
 
 ## Phase 9 — Documentation
-- [ ] README fully populated (overview, architecture, tech stack, pipeline steps, example queries, future work)
+- [x] README fully populated (overview, architecture, tech stack, pipeline steps, example queries, future work)
 - [ ] Recruiter/lab-ready polish pass
+
+## Phase 10 — Frontend & Live Hosting (extension beyond original blueprint)
+
+Decisions locked in: FastAPI + a real (React) frontend, deployed on a small always-on VM.
+
+**Backend (FastAPI)**
+- [ ] Endpoints for the three existing OLAP queries (count by type, avg altitude by region, speed distribution by class)
+- [ ] Endpoint for latest known position per aircraft (map view)
+- [ ] Endpoint for a single aircraft's history (time series of altitude/speed/climb rate) — nice-to-have, not required for v1
+- [ ] DuckDB connections opened `read_only=True`, since Prefect's `load_flow` writes to the same file periodically
+- [ ] CORS configured if frontend and backend aren't served from the same origin
+- [ ] Pydantic response models for each endpoint (same library, new purpose: API response shapes instead of ingestion validation)
+
+**Frontend (React)**
+- [ ] Dashboard view: the three OLAP results as charts/tables
+- [ ] Map view: latest aircraft positions (react-leaflet or similar)
+- [ ] Aircraft detail view: time series for one aircraft — nice-to-have, pairs with the optional history endpoint above
+- [ ] Decide build/serve strategy: simplest v1 is a built React static bundle served directly by FastAPI (`StaticFiles`), one deployable unit instead of two
+
+**VM & deployment**
+- [ ] Provision a small always-on VM (free-tier cloud instance or cheap VPS)
+- [ ] Run the Prefect pipeline scheduler as a systemd service (survives reboot/crash)
+- [ ] Run the FastAPI app (via uvicorn) as a systemd service
+- [ ] Reverse proxy (nginx or Caddy) in front of FastAPI for a real domain + HTTPS, rather than exposing a raw IP:port
+- [ ] Firewall: only open the ports you actually need (typically 80/443, plus SSH for management)
+
+**Known limitation to document, not solve**
+- [ ] DuckDB single-writer conflict: a request landing during the nightly write window can fail. Acceptable at this scale — note it in the README rather than over-engineering a fix (e.g. migrating to Postgres) for a portfolio project.
 
 ---
 

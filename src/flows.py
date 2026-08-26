@@ -41,4 +41,5 @@ def full_pipeline_flow():
     logging.info("Full Pipeline ran sucessfully")
 
 if __name__ == "__main__":
+    #full_pipeline_flow()
     full_pipeline_flow.serve(name="mil-aircraft-pipeline",interval=timedelta(days = 1))
