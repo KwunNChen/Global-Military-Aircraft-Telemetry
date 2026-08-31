@@ -4,7 +4,10 @@ __pycache__/
 *.pyc
 
 # secrets
-.secret
+.env
+
+# build artifacts
+deploy.zip
 
 # data + local db
 data/raw/

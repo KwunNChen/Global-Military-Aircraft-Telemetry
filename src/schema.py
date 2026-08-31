@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS dim_aircraft (
     aircraft_id VARCHAR PRIMARY KEY,
     registration VARCHAR,
     type_code VARCHAR,
-    aircraft_type VARCHAR
+    aircraft_type VARCHAR,
+    operator VARCHAR
 );
 """
 

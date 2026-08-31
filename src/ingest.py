@@ -15,7 +15,6 @@ def fetch_data():
         timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         try:
             filepath = DATA_DIR / "raw" / f"raw_aircraft_{timestamp}.json"
-            logging.basicConfig(level=logging.INFO, filename=DATA_DIR / "pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
             logging.info("Starting request to adsb.fi")
             response = None
             headers = {"User-Agent": "MilitaryAircraftPipeline/1.0"}

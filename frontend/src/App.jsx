@@ -1,120 +1,46 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import AircraftTypeChart from './components/AircraftTypeChart'
+import AltitudeByRegionChart from './components/AltitudeByRegionChart'
+import SpeedByTypeChart from './components/SpeedByTypeChart'
+import AircraftMap from './components/AircraftMap'
+import KpiStatStrip from './components/KpiStatStrip'
+import ActivityTicker from './components/ActivityTicker'
+import SpeedAltitudeScatter from './components/SpeedAltitudeScatter'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <header>
+        <h1> Automatic Dependent Surveillance Broadcasting Military Aircrafts</h1>
+      </header>
+      <KpiStatStrip />
+      <div className="dashboard-main">
+        <div className="card">
+          <h2>Live Positions</h2>
+          <AircraftMap />
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+        <div className="card">
+          <h2>Recent Activity</h2>
+          <ActivityTicker />
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      </div>
+      <div className="dashboard-grid">
+        <div className="card">
+          <h2>Aircraft by Type</h2>
+          <AircraftTypeChart />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="card">
+          <h2>Altitude by Region</h2>
+          <AltitudeByRegionChart />
         </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        <div className="card card-wide">
+          <h2>Speed by Type</h2>
+          <SpeedByTypeChart />
+        </div>
+        <div className="card card-wide">
+          <h2>Speed vs. Altitude</h2>
+          <SpeedAltitudeScatter />
+        </div>
+      </div>
     </>
   )
 }

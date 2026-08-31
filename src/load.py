@@ -21,9 +21,10 @@ def load_batch(con):
     clean_glob = str(DATA_DIR / "processed" / "clean_aircraft_*.parquet")
     con.execute(f"""
         INSERT INTO dim_aircraft
-        SELECT DISTINCT acft_ID AS aircraft_id, registration, type_code, aircraft_type
+        SELECT DISTINCT acft_ID AS aircraft_id, registration, type_code, aircraft_type, owner AS operator
         FROM read_parquet('{clean_glob}')
-        ON CONFLICT DO NOTHING
+        ON CONFLICT (aircraft_id) DO UPDATE SET operator = excluded.operator
+        WHERE excluded.operator IS NOT NULL
     """)
     con.execute(f"""
         INSERT INTO dim_location (region)
