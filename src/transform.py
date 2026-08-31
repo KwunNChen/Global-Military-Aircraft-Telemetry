@@ -1,7 +1,11 @@
 import polars as pl
 import logging
 from datetime import datetime, timezone
+from pathlib import Path
 from prefect import task
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
 
 TYPE_TO_CATEGORY = {
     "F15": "fighter", "F16": "fighter", "F22": "fighter", "F35": "fighter", "F18": "fighter",
@@ -28,7 +32,9 @@ TYPE_TO_CATEGORY = {
 }
 
 
-def load_data(pattern="data/processed/validated_aircraft_*.parquet"):
+def load_data(pattern=None):
+    if pattern is None:
+        pattern = DATA_DIR / "processed" / "validated_aircraft_*.parquet"
     return pl.read_parquet(pattern)
 
 
@@ -86,7 +92,7 @@ def make_region(dataframe):
 
 def save(dataframe):
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    path = f"data/processed/clean_aircraft_{timestamp}.parquet"
+    path = DATA_DIR / "processed" / f"clean_aircraft_{timestamp}.parquet"
     dataframe.write_parquet(path)
     return path
 

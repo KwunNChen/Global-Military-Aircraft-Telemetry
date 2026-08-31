@@ -4,7 +4,12 @@ from datetime import datetime, timezone, timedelta
 import logging
 import os
 
-def get_all_raw_files(directory="data/raw"):
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+
+def get_all_raw_files(directory=None):
+    if directory is None:
+        directory = DATA_DIR / "raw"
     files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
     if not files:
         return None
@@ -14,7 +19,9 @@ def get_all_raw_files(directory="data/raw"):
             acceptable_raw_filepath.append(os.path.join(directory, file))   
     return acceptable_raw_filepath
 
-def get_all_processed_files(directory="data/processed"):
+def get_all_processed_files(directory=None):
+    if directory is None:
+        directory = DATA_DIR / "processed"
     files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
     if not files:
         return None

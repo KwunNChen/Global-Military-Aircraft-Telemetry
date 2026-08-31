@@ -2,8 +2,12 @@ import duckdb
 import polars
 import logging
 from datetime import datetime, timezone
+from pathlib import Path
 from prefect import task
 from load import get_connection
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
 
 def get_ml_features(con):
     query = """
@@ -20,7 +24,7 @@ def retrieve_clean():
 
 def save(clean_data):
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    path = f"data/processed/ml_features_{timestamp}.parquet"
+    path = DATA_DIR / "processed" / f"ml_features_{timestamp}.parquet"
     clean_data.write_parquet(path)
     return path
 

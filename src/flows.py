@@ -5,10 +5,12 @@ from transform import run_transform
 from load import run_load
 from cleanup import cleanup_monthly
 from features import run_features
-import logging
 from datetime import timedelta
+from pathlib import Path
+import logging
 
-logging.basicConfig(level=logging.INFO, filename="data/pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s", force = True)
+log_path = Path(__file__).resolve().parent.parent / "data" / "pipeline.log"
+logging.basicConfig(level=logging.INFO, filename=log_path, filemode="a", format="%(asctime)s - %(levelname)s - %(message)s", force = True)
 
 @flow
 def ingest_flow():

@@ -4,7 +4,7 @@ __pycache__/
 *.pyc
 
 # secrets
-.env
+.secret
 
 # data + local db
 data/raw/

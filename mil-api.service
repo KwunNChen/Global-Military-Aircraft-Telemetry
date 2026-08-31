@@ -1,0 +1,14 @@
+[Unit]
+Description=Military Aircraft Pipeline - FastAPI Backend
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/mil-aircraft-pipeline/src
+ExecStart=/home/ubuntu/mil-aircraft-pipeline/.venv/bin/python -m uvicorn api:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

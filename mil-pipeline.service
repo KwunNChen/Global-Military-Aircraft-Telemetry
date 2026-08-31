@@ -1,0 +1,15 @@
+[Unit]
+Description=Military Aircraft Pipeline - Prefect Scheduler
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/mil-aircraft-pipeline
+Environment=PREFECT_SERVER_EPHEMERAL_STARTUP_TIMEOUT_SECONDS=60
+ExecStart=/home/ubuntu/mil-aircraft-pipeline/.venv/bin/python /home/ubuntu/mil-aircraft-pipeline/src/flows.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

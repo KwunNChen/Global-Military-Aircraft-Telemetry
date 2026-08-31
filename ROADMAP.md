@@ -72,12 +72,14 @@
 Decisions locked in: FastAPI + a real (React) frontend, deployed on a small always-on VM.
 
 **Backend (FastAPI)**
-- [ ] Endpoints for the three existing OLAP queries (count by type, avg altitude by region, speed distribution by class)
-- [ ] Endpoint for latest known position per aircraft (map view)
-- [ ] Endpoint for a single aircraft's history (time series of altitude/speed/climb rate) — nice-to-have, not required for v1
-- [ ] DuckDB connections opened `read_only=True`, since Prefect's `load_flow` writes to the same file periodically
-- [ ] CORS configured if frontend and backend aren't served from the same origin
-- [ ] Pydantic response models for each endpoint (same library, new purpose: API response shapes instead of ingestion validation)
+- [x] Endpoints for the three existing OLAP queries (count by type, avg altitude by region, speed distribution by class) — `src/api.py`, verified locally against real `pipeline.duckdb` data via `/docs`
+- [x] Endpoint for latest known position per aircraft (map view) — `/latest-positions`, uses `ROW_NUMBER() ... QUALIFY` to get each aircraft's newest row, verified working (global spread of real positions)
+- [x] Endpoint for a single aircraft's history (time series of altitude/speed/climb rate) — `/aircraft-history/{aircraft_id}`
+- [x] DuckDB connections opened `read_only=True`, since Prefect's `load_flow` writes to the same file periodically
+- [x] CORS configured (`allow_origins=["*"]`, appropriate since all endpoints are public read-only data, no auth)
+- [x] Pydantic response models for all five endpoints — verified real typed schemas showing in `/docs` (`AircraftTypeCount`, `RegionAltitude`, `SpeedStats`, `AircraftPosition`, `AircraftHistoryPoint`)
+
+**Backend deployed and verified live:** all 5 endpoints (with CORS + Pydantic response models) confirmed reachable at `https://starting-ict-providing-give.trycloudflare.com/docs` via the Cloudflare Tunnel workaround, deployed as systemd services (`mil-pipeline`, `mil-api`, `nginx`, `mil-tunnel`) — all confirmed surviving disconnects and staying `active` for 4+ hours unattended.
 
 **Frontend (React)**
 - [ ] Dashboard view: the three OLAP results as charts/tables
@@ -86,14 +88,19 @@ Decisions locked in: FastAPI + a real (React) frontend, deployed on a small alwa
 - [ ] Decide build/serve strategy: simplest v1 is a built React static bundle served directly by FastAPI (`StaticFiles`), one deployable unit instead of two
 
 **VM & deployment**
-- [ ] Provision a small always-on VM (free-tier cloud instance or cheap VPS)
-- [ ] Run the Prefect pipeline scheduler as a systemd service (survives reboot/crash)
-- [ ] Run the FastAPI app (via uvicorn) as a systemd service
-- [ ] Reverse proxy (nginx or Caddy) in front of FastAPI for a real domain + HTTPS, rather than exposing a raw IP:port
-- [ ] Firewall: only open the ports you actually need (typically 80/443, plus SSH for management)
+- [x] Provision a small always-on VM (Oracle Cloud Always Free, `VM.Standard.E2.1.Micro`, Ubuntu 24.04)
+- [x] Full pipeline (ingest → validate → transform → load → features) verified running end-to-end on the VM itself, not just locally — cross-platform path bugs (Windows-relative paths breaking on Linux) found and fixed across `ingest.py`, `validate.py`, `transform.py`, `load.py`, `features.py`, `cleanup.py`
+- [x] Run the Prefect pipeline scheduler as a systemd service (`mil-pipeline.service`) — survives reboot/crash, `Restart=always`
+- [x] Run the FastAPI app (via uvicorn) as a systemd service (`mil-api.service`)
+- [x] Reverse proxy: nginx in front of FastAPI on port 80 (`mil-api-nginx.conf`)
+- [x] Firewall opened correctly at every layer (ufw → replaced by direct iptables ACCEPT rules, both Security Lists, no NSGs) — **but inbound traffic to this instance is still blocked externally regardless**, confirmed via port scanner on ports 80, 443, and 8000 with every layer verified correct. Matches a documented, known Oracle Always Free tier issue (see forum thread linked in session), not a misconfiguration on our end.
+- [x] **Workaround: Cloudflare Tunnel** (`cloudflared`) — VM makes an outbound connection to Cloudflare instead of accepting inbound traffic, sidestepping the Oracle block entirely. Quick tunnel verified working end-to-end (`/docs` reachable over a public HTTPS URL).
+- [x] Make the tunnel persistent: `mil-tunnel.service`, systemd-managed, `Restart=always`, verified working end-to-end at a live public URL
+- [ ] Upgrade from a random `trycloudflare.com` quick-tunnel URL to a permanent named tunnel (requires a free Cloudflare account + a domain) for a stable link worth putting on a resume
 
 **Known limitation to document, not solve**
 - [ ] DuckDB single-writer conflict: a request landing during the nightly write window can fail. Acceptable at this scale — note it in the README rather than over-engineering a fix (e.g. migrating to Postgres) for a portfolio project.
+- [x] Oracle Always Free inbound networking issue — documented above, worked around via Cloudflare Tunnel rather than continuing to debug infrastructure outside our control
 
 ---
 

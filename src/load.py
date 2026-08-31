@@ -1,11 +1,15 @@
 import duckdb
 import logging
+from pathlib import Path
 from schema import CREATE_DIM_AIRCRAFT, CREATE_DIM_LOCATION, CREATE_FACT_AIRCRAFT_ACTIVITY
 from prefect import task
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+
 def get_connection():
     logging.info("Connecting to DuckDB database...")
-    return duckdb.connect("pipeline.duckdb")
+    return duckdb.connect(str(BASE_DIR / "pipeline.duckdb"))
 
 def create_tables(con):
     con.execute(CREATE_DIM_AIRCRAFT)
@@ -14,22 +18,23 @@ def create_tables(con):
     logging.info("Tables created successfully.")
 
 def load_batch(con):
-    con.execute("""
+    clean_glob = str(DATA_DIR / "processed" / "clean_aircraft_*.parquet")
+    con.execute(f"""
         INSERT INTO dim_aircraft
         SELECT DISTINCT acft_ID AS aircraft_id, registration, type_code, aircraft_type
-        FROM read_parquet('data/processed/clean_aircraft_*.parquet')
+        FROM read_parquet('{clean_glob}')
         ON CONFLICT DO NOTHING
     """)
-    con.execute("""
+    con.execute(f"""
         INSERT INTO dim_location (region)
         SELECT DISTINCT region
-        FROM read_parquet('data/processed/clean_aircraft_*.parquet')
+        FROM read_parquet('{clean_glob}')
         ON CONFLICT DO NOTHING""")
-    con.execute("""
+    con.execute(f"""
         INSERT INTO fact_aircraft_activity
         (aircraft_id, region, timestamp, altitude_change, speed_variability, lat, lon, altitude, speed, climb_rate, acceleration, heading_change, on_ground)
         SELECT acft_ID, region, timestamp, altitude_change, speed_variability, lat, lon, alt_baro, speed_mph, computed_climb_rate_fpm, acceleration_kts_per_s, heading_change_deg, on_ground
-        FROM read_parquet('data/processed/clean_aircraft_*.parquet')
+        FROM read_parquet('{clean_glob}')
         ON CONFLICT DO NOTHING""")
 
 def run_test_queries(con):

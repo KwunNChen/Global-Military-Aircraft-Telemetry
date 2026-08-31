@@ -8,7 +8,12 @@ import os
 import logging
 import json
 
-def get_all_files(directory="data/raw"):
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+
+def get_all_files(directory=None):
+    if directory is None:
+        directory = DATA_DIR / "raw"
     files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
     if not files:
         return None
@@ -109,7 +114,7 @@ def run_validation():
     validated_data = validate_models(all_telemetry)
     df = pl.DataFrame(validated_data)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    df.write_parquet(f"data/processed/validated_aircraft_{timestamp}.parquet")
+    df.write_parquet(DATA_DIR / "processed" / f"validated_aircraft_{timestamp}.parquet")
     logging.info(f"Validation: processed {loaded} files ({error} failed), wrote {len(validated_data)} rows")
 
 if __name__ == "__main__":

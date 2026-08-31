@@ -89,6 +89,17 @@ pip install -r requirements.txt
 
 No API key required (adsb.fi is open access). The `.env` file is still gitignored and reserved for future keys if additional data sources are added.
 
+Note: the steps above are all that's needed to run the pipeline locally for development or review. Nothing below this section is required to use or evaluate the code.
+
+## Deployment
+
+The pipeline and its API/dashboard run continuously on a small always-on VM (Oracle Cloud, Ubuntu), rather than a local machine, so the live dashboard is reachable independent of any one computer being on.
+
+- **Scheduling**: the Prefect flow runs as a systemd service, so it survives reboots and process crashes without manual restarting
+- **API**: a FastAPI service (also systemd-managed) reads from the DuckDB warehouse with read-only connections, since Prefect's load step periodically writes to the same file
+- **Access**: nginx sits in front of the API/dashboard for HTTPS, and the firewall (both the cloud provider's security rules and the OS-level firewall) only exposes the ports actually needed (HTTP/HTTPS, plus SSH for maintenance)
+- **Known limitation**: a request landing during the nightly DuckDB write can occasionally fail, a reasonable tradeoff for a single-file embedded database at this scale, rather than reaching for a client-server database to eliminate an edge case that costs nothing to just document
+
 ## Example Queries
 
 Run against a live snapshot of 656 validated observations across 512 aircraft.

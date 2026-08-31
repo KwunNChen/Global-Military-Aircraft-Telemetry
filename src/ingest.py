@@ -6,13 +6,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 from prefect import task
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+
 @task
 def fetch_data():
     for i in range(3):
         timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         try:
-            filepath = Path(f"data/raw/raw_aircraft_{timestamp}.json")
-            logging.basicConfig(level=logging.INFO, filename ="data/pipeline.log",filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
+            filepath = DATA_DIR / "raw" / f"raw_aircraft_{timestamp}.json"
+            logging.basicConfig(level=logging.INFO, filename=DATA_DIR / "pipeline.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
             logging.info("Starting request to adsb.fi")
             response = None
             headers = {"User-Agent": "MilitaryAircraftPipeline/1.0"}
