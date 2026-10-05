@@ -1,11 +1,15 @@
 # Roadmap
 
+**Repo:** https://github.com/KwunNChen/Global-Military-Aircraft-Telemetry
+**Live site:** https://mil-aircraft-telemetry.pages.dev/
+**Live API (quick tunnel, temporary):** https://starting-ict-providing-give.trycloudflare.com/docs
+
 ## Phase 1 — Project Setup
 - [x] Virtual environment created (`.venv`)
 - [x] Libraries installed *into* the venv (not global)
 - [x] Directory structure created (`/src`, `/data/raw`, `/data/processed`)
 - [x] README skeleton
-- [x] GitHub repository created (local only — never pushed without explicit go-ahead)
+- [x] GitHub repository created and pushed: https://github.com/KwunNChen/Global-Military-Aircraft-Telemetry
 - [x] Architecture description added to README
 
 ## Phase 2 — Data Ingestion
@@ -57,7 +61,7 @@
 - [x] `load_flow`
 - [x] `full_pipeline_flow` (chains the above, verified end-to-end run)
 - [x] Logging, retries added
-- [x] Scheduling added (`.serve()`, daily interval)
+- [x] Scheduling added — originally `.serve()`, replaced with a systemd-driven hourly loop (see Phase 10) because `.serve()` on an ephemeral Prefect server never created scheduled runs
 
 ## Phase 8 — ML-Ready Feature Generation
 - [x] Feature set finalized (climb_rate, acceleration, heading_change, altitude_change, speed_variability, aircraft_type, region)
@@ -90,7 +94,7 @@ Decisions locked in: FastAPI + a real (React) frontend, deployed on a small alwa
 **VM & deployment**
 - [x] Provision a small always-on VM (Oracle Cloud Always Free, `VM.Standard.E2.1.Micro`, Ubuntu 24.04)
 - [x] Full pipeline (ingest → validate → transform → load → features) verified running end-to-end on the VM itself, not just locally — cross-platform path bugs (Windows-relative paths breaking on Linux) found and fixed across `ingest.py`, `validate.py`, `transform.py`, `load.py`, `features.py`, `cleanup.py`
-- [x] Run the Prefect pipeline scheduler as a systemd service (`mil-pipeline.service`) — survives reboot/crash, `Restart=always`
+- [x] Run the pipeline as a systemd service (`mil-pipeline.service`) that runs the full flow once per hour as a fresh process — survives reboot/crash, `Restart=always`. Verified 2026-10-05: ingestion had silently not run since 2026-08-27 under `.serve()`; after the switch, fresh rows (04:28 UTC) appear in the live API. Also required rebuilding the VM's `pipeline.duckdb` (old file backed up as `pipeline.duckdb.bak`) because `dim_aircraft` gained an `operator` column and `CREATE TABLE IF NOT EXISTS` doesn't migrate existing tables.
 - [x] Run the FastAPI app (via uvicorn) as a systemd service (`mil-api.service`)
 - [x] Reverse proxy: nginx in front of FastAPI on port 80 (`mil-api-nginx.conf`)
 - [x] Firewall opened correctly at every layer (ufw → replaced by direct iptables ACCEPT rules, both Security Lists, no NSGs) — **but inbound traffic to this instance is still blocked externally regardless**, confirmed via port scanner on ports 80, 443, and 8000 with every layer verified correct. Matches a documented, known Oracle Always Free tier issue (see forum thread linked in session), not a misconfiguration on our end.

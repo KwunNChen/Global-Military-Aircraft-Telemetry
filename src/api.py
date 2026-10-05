@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-import duckdb
 from datetime import datetime
 from pathlib import Path
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import duckdb
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 app = FastAPI()

@@ -17,26 +17,37 @@ def create_tables(con):
     con.execute(CREATE_FACT_AIRCRAFT_ACTIVITY)
     logging.info("Tables created successfully.")
 
-def load_batch(con):
-    clean_glob = str(DATA_DIR / "processed" / "clean_aircraft_*.parquet")
-    con.execute(f"""
+def get_new_files():
+    return sorted((DATA_DIR / "processed").glob("clean_aircraft_*.parquet"))
+
+def archive_files(files):
+    if not files:
+        return
+    archive_dir = files[0].parent / "clean_archive"
+    archive_dir.mkdir(exist_ok=True)
+    for f in files:
+        f.rename(archive_dir / f.name)
+
+def load_batch(con, files):
+    paths = [str(f) for f in files]
+    con.execute("""
         INSERT INTO dim_aircraft
         SELECT DISTINCT acft_ID AS aircraft_id, registration, type_code, aircraft_type, owner AS operator
-        FROM read_parquet('{clean_glob}')
+        FROM read_parquet(?)
         ON CONFLICT (aircraft_id) DO UPDATE SET operator = excluded.operator
         WHERE excluded.operator IS NOT NULL
-    """)
-    con.execute(f"""
+    """, [paths])
+    con.execute("""
         INSERT INTO dim_location (region)
         SELECT DISTINCT region
-        FROM read_parquet('{clean_glob}')
-        ON CONFLICT DO NOTHING""")
-    con.execute(f"""
+        FROM read_parquet(?)
+        ON CONFLICT DO NOTHING""", [paths])
+    con.execute("""
         INSERT INTO fact_aircraft_activity
         (aircraft_id, region, timestamp, altitude_change, speed_variability, lat, lon, altitude, speed, climb_rate, acceleration, heading_change, on_ground)
         SELECT acft_ID, region, timestamp, altitude_change, speed_variability, lat, lon, alt_baro, speed_mph, computed_climb_rate_fpm, acceleration_kts_per_s, heading_change_deg, on_ground
-        FROM read_parquet('{clean_glob}')
-        ON CONFLICT DO NOTHING""")
+        FROM read_parquet(?)
+        ON CONFLICT DO NOTHING""", [paths])
 
 def run_test_queries(con):
     result = con.execute("SELECT aircraft_type, COUNT(*) FROM dim_aircraft GROUP BY aircraft_type").fetchall()
@@ -48,10 +59,15 @@ def run_test_queries(con):
 
 @task
 def run_load():
+    files = get_new_files()
     with get_connection() as con:
         create_tables(con)
-        load_batch(con)
-        logging.info("Data loaded into DuckDB successfully.")
+        if not files:
+            logging.info("Load: no new clean files to process")
+        else:
+            load_batch(con, files)
+            logging.info(f"Data loaded into DuckDB successfully from {len(files)} files.")
+            archive_files(files)
         run_test_queries(con)
 
 if __name__ == "__main__":

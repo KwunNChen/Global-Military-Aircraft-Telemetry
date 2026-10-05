@@ -1,13 +1,15 @@
 [Unit]
-Description=Military Aircraft Pipeline - Prefect Scheduler
+Description=Military Aircraft Pipeline - hourly one-shot runs
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/mil-aircraft-pipeline
+WorkingDirectory=/home/ubuntu/mil-aircraft-pipeline/src
 Environment=PREFECT_SERVER_EPHEMERAL_STARTUP_TIMEOUT_SECONDS=60
-ExecStart=/home/ubuntu/mil-aircraft-pipeline/.venv/bin/python /home/ubuntu/mil-aircraft-pipeline/src/flows.py
+# Each pass is a fresh Python process (frees memory on the 1GB VM); a failed run doesn't stop the loop.
+# Run interval = 3600 seconds, change the sleep value to adjust.
+ExecStart=/bin/bash -c 'while true; do /home/ubuntu/mil-aircraft-pipeline/.venv/bin/python -c "from flows import full_pipeline_flow; full_pipeline_flow()"; sleep 3600; done'
 Restart=always
 RestartSec=10
 

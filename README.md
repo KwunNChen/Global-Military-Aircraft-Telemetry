@@ -4,6 +4,8 @@ A reproducible data engineering pipeline that ingests open-source military aircr
 
 > Status: **Phase 10 — Frontend & Live Hosting** (in progress, extension beyond the original 9-phase blueprint). See [ROADMAP.md](ROADMAP.md) for full phase tracking.
 
+**Live dashboard: https://mil-aircraft-telemetry.pages.dev/**
+
 ## Overview
 
 This project pulls real-time global military aircraft telemetry from the [adsb.fi](https://adsb.fi/) API (a free, community-run feed carrying the same ADS-B Exchange-lineage data format), enforces a strict data schema, engineers activity features (climb rate, acceleration, heading change), and lands the result in a queryable OLAP warehouse — with the whole pipeline orchestrated and automatable end to end.
@@ -95,7 +97,7 @@ Note: the steps above are all that's needed to run the pipeline locally for deve
 
 The pipeline and its API/dashboard run continuously on a small always-on VM (Oracle Cloud, Ubuntu), rather than a local machine, so the live dashboard is reachable independent of any one computer being on.
 
-- **Scheduling**: the Prefect flow runs as a systemd service, so it survives reboots and process crashes without manual restarting
+- **Scheduling**: a systemd service runs the full Prefect flow once an hour as a fresh process, so it survives reboots and process crashes without manual restarting
 - **API**: a FastAPI service (also systemd-managed) reads from the DuckDB warehouse with read-only connections, since Prefect's load step periodically writes to the same file
 - **Access**: nginx sits in front of the API/dashboard for HTTPS, and the firewall (both the cloud provider's security rules and the OS-level firewall) only exposes the ports actually needed (HTTP/HTTPS, plus SSH for maintenance)
 - **Known limitation**: a request landing during the nightly DuckDB write can occasionally fail, a reasonable tradeoff for a single-file embedded database at this scale, rather than reaching for a client-server database to eliminate an edge case that costs nothing to just document
@@ -136,7 +138,7 @@ Columns: `aircraft_id`, `timestamp`, `climb_rate`, `acceleration`, `heading_chan
 A couple of decisions worth explaining rather than leaving implicit:
 
 - **`region` is a coarse bounding-box classification (CONUS, Europe, Middle East, Indo-Pacific, other), not raw coordinates.** A dimension table only earns its keep when it's low-cardinality and reusable; exact lat/lon is neither, so it stays on the fact table as a measured value, and `region` exists purely to make region-level aggregation and joins cheap.
-- **Scheduling runs on Prefect's `.serve()` with a daily interval, not a managed deployment.** `.serve()` keeps a single process alive to fire the schedule, which is enough for a project running on one machine; a deployment + worker setup would be the right call if this ever needed to survive independently of a specific always-on host.
+- **Scheduling is a systemd service looping the flow hourly, not Prefect's `.serve()`.** I started with `.serve()`, but on an ephemeral (serverless) Prefect API it never creates scheduled runs, so the pipeline polled forever without ingesting anything. Each hourly pass now starts a fresh Python process, which also frees memory on the 1GB VM. Prefect still provides flows, tasks, retries and logging per run. A persistent Prefect server plus a worker would be the production-grade replacement if this moved to a bigger host.
 
 ## Roadmap
 

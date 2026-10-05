@@ -32,10 +32,28 @@ TYPE_TO_CATEGORY = {
 }
 
 
-def load_data(pattern=None):
-    if pattern is None:
-        pattern = DATA_DIR / "processed" / "validated_aircraft_*.parquet"
-    return pl.read_parquet(pattern)
+def get_new_files():
+    return sorted((DATA_DIR / "processed").glob("validated_aircraft_*.parquet"))
+
+
+def load_last_state():
+    path = DATA_DIR / "processed" / "last_state.parquet"
+    if path.exists():
+        return pl.read_parquet(path)
+    return None
+
+
+def save_last_state(dataframe):
+    dataframe.write_parquet(DATA_DIR / "processed" / "last_state.parquet")
+
+
+def archive_files(files):
+    if not files:
+        return
+    archive_dir = files[0].parent / "validated_archive"
+    archive_dir.mkdir(exist_ok=True)
+    for f in files:
+        f.rename(archive_dir / f.name)
 
 
 def normalize_timestamp(dataframe):
@@ -98,18 +116,43 @@ def save(dataframe):
 
 @task
 def run_transform():
-    dataframe = load_data()
-    logging.info(f"Transform: loaded {dataframe.height} raw validated rows")
+    files = get_new_files()
+    if not files:
+        logging.info("Transform: no new validated files to process")
+        return
 
-    dataframe = normalize_timestamp(dataframe)
-    dataframe = dedupe_and_sort(dataframe)
-    dataframe = add_deltas(dataframe)
-    dataframe = convert_units(dataframe)
-    dataframe = classify_type(dataframe)
-    dataframe = make_region(dataframe)
+    new_data = pl.read_parquet(files).with_columns(pl.lit(True).alias("is_new"))
+    logging.info(f"Transform: loaded {new_data.height} new rows from {len(files)} files")
 
-    path = save(dataframe)
-    logging.info(f"Transform: wrote {dataframe.height} rows to {path}")
+    # Seed with each aircraft's last known reading so delta calculations (climb
+    # rate, acceleration, etc.) stay correct even though we only process new
+    # files each run instead of the full history. last_state is kept in the
+    # same raw (pre-normalize) schema as new_data so a single normalize_timestamp
+    # pass handles both consistently — normalizing it twice across runs would
+    # corrupt the timestamp.
+    last_state = load_last_state()
+    if last_state is not None:
+        combined = pl.concat([last_state.with_columns(pl.lit(False).alias("is_new")), new_data], how="vertical_relaxed")
+    else:
+        combined = new_data
+    combined = combined.unique(subset=["acft_ID", "timestamp"])
+
+    # Snapshot the latest raw reading per aircraft to seed the next run.
+    next_state = combined.sort("timestamp").unique(subset=["acft_ID"], keep="last").drop("is_new")
+
+    combined = normalize_timestamp(combined)
+    combined = dedupe_and_sort(combined)
+    combined = add_deltas(combined)
+    combined = convert_units(combined)
+    combined = classify_type(combined)
+    combined = make_region(combined)
+
+    output = combined.filter(pl.col("is_new")).drop("is_new")
+    path = save(output)
+    logging.info(f"Transform: wrote {output.height} rows to {path}")
+
+    save_last_state(next_state)
+    archive_files(files)
 
 if __name__ == "__main__":
     run_transform()

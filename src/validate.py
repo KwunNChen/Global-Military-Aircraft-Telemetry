@@ -23,6 +23,12 @@ def get_all_files(directory=None):
             acceptable_filepath.append(os.path.join(directory, file))   
     return acceptable_filepath
 
+def archive_file(filepath):
+    path = Path(filepath)
+    archive_dir = path.parent / "archive"
+    archive_dir.mkdir(exist_ok=True)
+    path.rename(archive_dir / path.name)
+
 def load_file(filepath):
     try:
         path = Path(filepath)
@@ -99,23 +105,32 @@ def validate_models(telemetry_record):
 @task
 def run_validation():
     filepaths = get_all_files()
+    if not filepaths:
+        logging.info("Validation: no new raw files to process")
+        return
+
     all_telemetry = []
     loaded = 0
     error = 0
-    
+    processed_files = []
+
     for file in filepaths:
         content = load_file(file)
         if content is not None:
             all_telemetry.extend(build_models(content))
             loaded += 1
+            processed_files.append(file)
         else:
             error += 1
-    
+
     validated_data = validate_models(all_telemetry)
     df = pl.DataFrame(validated_data)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     df.write_parquet(DATA_DIR / "processed" / f"validated_aircraft_{timestamp}.parquet")
     logging.info(f"Validation: processed {loaded} files ({error} failed), wrote {len(validated_data)} rows")
+
+    for file in processed_files:
+        archive_file(file)
 
 if __name__ == "__main__":
     run_validation()

@@ -44,4 +44,4 @@ def full_pipeline_flow():
 
 if __name__ == "__main__":
     #full_pipeline_flow()
-    full_pipeline_flow.serve(name="mil-aircraft-pipeline",interval=timedelta(days = 1))
+    full_pipeline_flow.serve(name="mil-aircraft-pipeline",interval=timedelta(minutes = 5))
