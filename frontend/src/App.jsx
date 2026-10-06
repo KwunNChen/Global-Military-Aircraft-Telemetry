@@ -5,12 +5,14 @@ import AircraftMap from './components/AircraftMap'
 import KpiStatStrip from './components/KpiStatStrip'
 import ActivityTicker from './components/ActivityTicker'
 import SpeedAltitudeScatter from './components/SpeedAltitudeScatter'
+import LastUpdated from './components/LastUpdated'
 
 function App() {
   return (
     <>
       <header>
         <h1> Automatic Dependent Surveillance Broadcasting Military Aircrafts</h1>
+        <LastUpdated />
       </header>
       <KpiStatStrip />
       <div className="dashboard-main">
